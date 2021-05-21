@@ -169,7 +169,7 @@ class bitso
         A bitso.AccountStatus instance. */
 
     $path = $this->url . "/account_status/";
-    $RequestPath = "/api/v3/account_status/";
+    $RequestPath = "/v3/account_status/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -187,7 +187,7 @@ class bitso
     */
 
     $path = $this->url . "/balance/";
-    $RequestPath = "/api/v3/balance/";
+    $RequestPath = "/v3/balance/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -203,7 +203,7 @@ class bitso
         A list bitso.Fees instances.
     */
     $path = $this->url . "/fees/";
-    $RequestPath = "/api/v3/fees/";
+    $RequestPath = "/v3/fees/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -233,7 +233,7 @@ class bitso
 
     $parameters = http_build_query($params,'','&');
     $path = $this->url . "/ledger/?".$parameters;
-    $RequestPath = "/api/v3/ledger/?".$parameters;
+    $RequestPath = "/v3/ledger/?".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -264,11 +264,11 @@ class bitso
       unset($params['wids']);
       $id_nums = implode('', $ids);
       $path = $this->url . "/withdrawals/".$id_nums."/?".$parameters;
-      $RequestPath = "/api/v3/withdrawals/".$id_nums."/?".$parameters;
+      $RequestPath = "/v3/withdrawals/".$id_nums."/?".$parameters;
     }
     $parameters = http_build_query($params,'','&');
     $path = $this->url . "/withdrawals/?".$parameters;
-    $RequestPath = "/api/v3/withdrawals/?".$parameters;
+    $RequestPath = "/v3/withdrawals/?".$parameters;
 
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
@@ -300,11 +300,11 @@ class bitso
       unset($params['fids']);
       $id_nums = implode('', $ids);
       $path = $this->url . "/withdrawals/".$id_nums."/?".$parameters;
-      $RequestPath = "/api/v3/withdrawals/".$id_nums."/?".$parameters;
+      $RequestPath = "/v3/withdrawals/".$id_nums."/?".$parameters;
     }
     $parameters = http_build_query($params,'','&');
 	  $path = $this->url . "/fundings/?".$parameters;
-    $RequestPath = "/api/v3/fundings/?".$parameters;
+    $RequestPath = "/v3/fundings/?".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -318,7 +318,7 @@ class bitso
       Returns all Trades Associated with an order
     */
     $path = $this->url . "/order_trades/".$id;
-    $RequestPath = "/api/v3/order_trades/".$id;
+    $RequestPath = "/v3/order_trades/".$id;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -348,7 +348,7 @@ class bitso
     $id_nums = implode('', $ids);
     $parameters = http_build_query($params,'','&');
     $path = $this->url . "/user_trades/".$id_nums."/?".$parameters;
-    $RequestPath = "/api/v3/user_trades/".$id_nums."/?".$parameters;
+    $RequestPath = "/v3/user_trades/".$id_nums."/?".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -369,7 +369,7 @@ class bitso
     */
     $parameters = http_build_query($params,'','&');
     $path = $this->url . "/open_orders/?".$parameters;
-    $RequestPath = "/api/v3/open_orders/?".$parameters;
+    $RequestPath = "/v3/open_orders/?".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -390,7 +390,7 @@ class bitso
     */
     $parameters = implode(',', $ids);
     $path = $this->url . "/orders/".$parameters;
-    $RequestPath = "/api/v3/orders/".$parameters;
+    $RequestPath = "/v3/orders/".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -416,7 +416,7 @@ class bitso
     }
 
     $path = $this->url . "/orders/".$parameters;
-    $RequestPath = "/api/v3/orders/".$parameters;
+    $RequestPath = "/v3/orders/".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'DELETE';
     $JSONPayload = '';
@@ -445,7 +445,7 @@ class bitso
         A bitso.Order instance. 
     */
     $path = $this->url . "/orders/";
-    $RequestPath = "/api/v3/orders/";
+    $RequestPath = "/v3/orders/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'POST';
     $JSONPayload = json_encode($params);
@@ -466,7 +466,7 @@ class bitso
     */
     $parameters = http_build_query($params,'','&');
     $path = $this->url . "/funding_destination/?".$parameters;
-    $RequestPath = "/api/v3/funding_destination/?".$parameters;
+    $RequestPath = "/v3/funding_destination/?".$parameters;
     $nonce = $this->makeNonce();
     $HTTPMethod = 'GET';
     $JSONPayload = '';
@@ -488,7 +488,7 @@ class bitso
         ok
     */
     $path = $this->url . "/bitcoin_withdrawal/";
-    $RequestPath = "/api/v3/bitcoin_withdrawal/";
+    $RequestPath = "/v3/bitcoin_withdrawal/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'POST';	
     $JSONPayload = json_encode($params);
@@ -510,7 +510,7 @@ class bitso
         ok
     */
     $path = $this->url . "/ether_withdrawal/";
-    $RequestPath = "/api/v3/ether_withdrawal/";
+    $RequestPath = "/v3/ether_withdrawal/";
     $nonce = $this->makeNonce();
     $HTTPMethod = 'POST';
     $JSONPayload = json_encode($params);
@@ -534,7 +534,7 @@ class bitso
           ok
       */
       $path = $this->url . "/ripple_withdrawal/";
-      $RequestPath = "/api/v3/ripple_withdrawal/";
+      $RequestPath = "/v3/ripple_withdrawal/";
       $nonce = $this->makeNonce();
       $HTTPMethod = 'POST';
       $JSONPayload = json_encode($params);
@@ -566,7 +566,7 @@ class bitso
           ok      
       */
       $path = $this->url . "/spei_withdrawal/";
-      $RequestPath = "/api/v3/spei_withdrawal/";
+      $RequestPath = "/v3/spei_withdrawal/";
       $nonce = $this->makeNonce();
       $HTTPMethod = 'POST';
       $JSONPayload = json_encode($params);
